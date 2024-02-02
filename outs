@@ -1,0 +1,113 @@
+
+PLAY [Network Playbook to gather facts] ****************************************
+
+TASK [Gather EOS facts] ********************************************************
+ok: [sw-1]
+ok: [sw-2]
+
+TASK [Show registered facts] ***************************************************
+ok: [sw-1] => {
+    "ansible_facts": {
+        "net_all_ipv4_addresses": [
+            "10.9.36.70"
+        ],
+        "net_all_ipv6_addresses": [],
+        "net_api": "cliconf",
+        "net_config": "! Command: show running-config\n! device: arista (vEOS, EOS-4.22.0F)\n!\n! boot system flash:/vEOS-lab.swi\n!\ntransceiver qsfp default-mode 4x10G\n!\nhostname arista\ndns domain eacdc771-b115-4be3-b752-621e7ba47b5f\n!\nspanning-tree mode mstp\n!\nno aaa root\n!\nusername admin role network-admin secret sha512 $6$6d/GLA/k26lQHvQA$tc5OEnn/k6jS00if8OemuLSCWrr11uETKjbQC12qetkBdg30BRUjH5vDnZpyoeW1DS7Ybt5O26PkkfN0CLFkn1\n!\ninterface Management1\n   ip address dhcp\n   dhcp client accept default-route\n!\nno ip routing\n!\nend",
+        "net_filesystems": [
+            "file:",
+            "flash:",
+            "system:"
+        ],
+        "net_fqdn": "arista.eacdc771-b115-4be3-b752-621e7ba47b5f",
+        "net_gather_network_resources": [],
+        "net_gather_subset": [
+            "interfaces",
+            "default",
+            "hardware",
+            "config"
+        ],
+        "net_hostname": "arista",
+        "net_image": "flash:/vEOS-lab.swi",
+        "net_interfaces": {
+            "Management1": {
+                "bandwidth": 1000000000,
+                "description": "",
+                "duplex": "duplexFull",
+                "ipv4": {
+                    "address": "10.9.36.70",
+                    "masklen": 12
+                },
+                "lineprotocol": "up",
+                "macaddress": "aa:a3:a3:09:24:46",
+                "mtu": 1500,
+                "operstatus": "connected",
+                "type": "routed"
+            }
+        },
+        "net_memfree_mb": 1306.08203125,
+        "net_memtotal_mb": 1967.37109375,
+        "net_model": "vEOS",
+        "net_neighbors": {},
+        "net_python_version": "3.10.12",
+        "net_serialnum": "",
+        "net_system": "eos",
+        "net_version": "4.22.0F",
+        "network_resources": {}
+    }
+}
+ok: [sw-2] => {
+    "ansible_facts": {
+        "net_all_ipv4_addresses": [
+            "10.1.117.15"
+        ],
+        "net_all_ipv6_addresses": [],
+        "net_api": "cliconf",
+        "net_config": "! Command: show running-config\n! device: arista (vEOS, EOS-4.22.0F)\n!\n! boot system flash:/vEOS-lab.swi\n!\ntransceiver qsfp default-mode 4x10G\n!\nhostname arista\ndns domain eacdc771-b115-4be3-b752-621e7ba47b5f\n!\nspanning-tree mode mstp\n!\nno aaa root\n!\nusername admin role network-admin secret sha512 $6$i1Mi06Dk4KewjnD5$MnfT29o94pkWniPdrB93PdUZ864XFH4Nb0.Yzb0gwg2oA8kiTKhAcrly2VZWd84BIq7iMAl0cRRFPnItl/euE/\n!\ninterface Management1\n   ip address dhcp\n   dhcp client accept default-route\n!\nno ip routing\n!\nend",
+        "net_filesystems": [
+            "file:",
+            "flash:",
+            "system:"
+        ],
+        "net_fqdn": "arista.eacdc771-b115-4be3-b752-621e7ba47b5f",
+        "net_gather_network_resources": [],
+        "net_gather_subset": [
+            "interfaces",
+            "default",
+            "hardware",
+            "config"
+        ],
+        "net_hostname": "arista",
+        "net_image": "flash:/vEOS-lab.swi",
+        "net_interfaces": {
+            "Management1": {
+                "bandwidth": 1000000000,
+                "description": "",
+                "duplex": "duplexFull",
+                "ipv4": {
+                    "address": "10.1.117.15",
+                    "masklen": 12
+                },
+                "lineprotocol": "up",
+                "macaddress": "aa:a3:a3:01:75:0f",
+                "mtu": 1500,
+                "operstatus": "connected",
+                "type": "routed"
+            }
+        },
+        "net_memfree_mb": 1305.640625,
+        "net_memtotal_mb": 1967.37109375,
+        "net_model": "vEOS",
+        "net_neighbors": {},
+        "net_python_version": "3.10.12",
+        "net_serialnum": "",
+        "net_system": "eos",
+        "net_version": "4.22.0F",
+        "network_resources": {}
+    }
+}
+
+PLAY RECAP *********************************************************************
+sw-1                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+sw-2                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
